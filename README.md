@@ -17,6 +17,7 @@ Aplicação de lista de tarefas desenvolvida com **React**, **TypeScript** e **V
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React Router](https://reactrouter.com/)
 - [use-local-storage](https://www.npmjs.com/package/use-local-storage)
+- [CVA](https://www.npmjs.com/package/class-variance-authority)
 
 ## Estrutura do Projeto
 

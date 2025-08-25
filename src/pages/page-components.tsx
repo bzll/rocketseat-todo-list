@@ -21,10 +21,10 @@ export default function PageComponents() {
       <div className="grid gap-10">
         <div className="flex flex-col gap-2">
           <Text variant="body-md" className="text-pink-base">
-            Olá mundo!
+            Bem-vindo ao seu Todo!
           </Text>
-          <Text className="text-green-base">Olá mundo!</Text>
-          <Text variant="body-md-bold">Olá mundo!</Text>
+          <Text className="text-green-base">Você tem 2 tarefas pendentes</Text>
+          <Text variant="body-md-bold">Organize seu dia com eficiência</Text>
         </div>
         <div className="flex gap-1">
           <Icon svg={TrashIcon} className="fill-green-base" />
@@ -35,33 +35,49 @@ export default function PageComponents() {
           <Icon svg={XIcon} />
         </div>
         <div className="flex gap-1">
-          <Badge variant="secondary">5</Badge>
-          <Badge>2 de 5</Badge>
-          <Badge loading>5</Badge>
+          <Badge variant="secondary">3 novas</Badge>
+          <Badge>2 concluídas</Badge>
+          <Badge loading>Carregando...</Badge>
         </div>
         <div>
-          <Button icon={PlusIcon}>Adicionar</Button>
+          <Button icon={PlusIcon}>Nova tarefa</Button>
           <Button icon={PlusIcon} handling>
-            Criando...
+            Adicionando...
           </Button>
         </div>
         <div className="flex gap-1">
-          <ButtonIcon icon={TrashIcon} />
-          <ButtonIcon icon={TrashIcon} variant="secondary" />
-          <ButtonIcon icon={TrashIcon} variant="tertiary" />
-          <ButtonIcon icon={PlusIcon} disabled />
-          <ButtonIcon icon={PlusIcon} loading />
-          <ButtonIcon icon={PlusIcon} handling />
+          <ButtonIcon icon={TrashIcon} aria-label="Excluir tarefa" />
+          <ButtonIcon
+            icon={PencilIcon}
+            variant="secondary"
+            aria-label="Editar tarefa"
+          />
+          <ButtonIcon
+            icon={CheckIcon}
+            variant="tertiary"
+            aria-label="Concluir tarefa"
+          />
+          <ButtonIcon icon={PlusIcon} disabled aria-label="Adicionar tarefa" />
+          <ButtonIcon icon={PlusIcon} loading aria-label="Adicionando tarefa" />
+          <ButtonIcon icon={PlusIcon} handling aria-label="Processando" />
         </div>
         <div>
-          <InputText placeholder="Digite algo"></InputText>
+          <InputText
+            placeholder="Descreva sua nova tarefa..."
+            className="w-full"
+          />
         </div>
-        <div>
+        <div className="flex gap-2 items-center">
           <InputCheckbox />
+          <Text as="label">Comprar leite</Text>
           <InputCheckbox loading />
+          <Text as="label">Enviar relatório</Text>
         </div>
         <div>
-          <Card size="md">Olá mundo!</Card>
+          <Card size="md">
+            <Text variant="body-md-bold">Tarefa: Estudar React</Text>
+            <Text variant="body-sm-bold">Prioridade: Alta</Text>
+          </Card>
         </div>
         <div className="space-y-2">
           <Skeleton className="h-6" />
