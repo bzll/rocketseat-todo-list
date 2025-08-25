@@ -1,15 +1,63 @@
-# React + TypeScript + Vite
+# ToDo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de lista de tarefas desenvolvida com **React**, **TypeScript** e **Vite**.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Adição, remoção e marcação de tarefas
+- Interface moderna com componentes reutilizáveis
+- Armazenamento local das tarefas
+- Responsivo e fácil de usar
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/)
+- [use-local-storage](https://www.npmjs.com/package/use-local-storage)
+
+## Estrutura do Projeto
+
+```
+src/
+  App.tsx
+  main.tsx
+  components/
+  core-components/
+  helpers/
+  hooks/
+  models/
+  pages/
+public/
+```
+
+## Scripts
+
+- `pnpm dev` — inicia o servidor de desenvolvimento
+- `pnpm build` — gera a build de produção
+- `pnpm preview` — visualiza a build de produção
+- `pnpm lint` — executa o linter
+
+## Como rodar o projeto
+
+1. Instale as dependências:
+   ```sh
+   pnpm install
+   ```
+2. Inicie o servidor de desenvolvimento:
+   ```sh
+   pnpm dev
+   ```
+
+Acesse [http://localhost:5173](http://localhost:5173) no navegador.
+
+## Configuração do ESLint
+
+O projeto já vem com ESLint configurado para TypeScript e React. Para regras mais avançadas, consulte o exemplo no próprio arquivo `tseslint.config.ts`.
+
+### Exemplo de Configuração Avançada
 
 ```js
 export default tseslint.config([
@@ -17,29 +65,29 @@ export default tseslint.config([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
+      // Outras configs...
 
-      // Remove tseslint.configs.recommended and replace with this
+      // Remove tseslint.configs.recommended e substitua por isso
       ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
+      // Alternativamente, use isso para regras mais rígidas
       ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
+      // Opcionalmente, adicione isso para regras estilísticas
       ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
+      // Outras configs...
     ],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
+      // outras opções...
     },
   },
 ])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Você também pode instalar `eslint-plugin-react-x` e `eslint-plugin-react-dom` para regras de lint específicas do React:
 
 ```js
 // eslint.config.js
@@ -51,10 +99,10 @@ export default tseslint.config([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-      // Enable lint rules for React
+      // Outras configs...
+      // Habilita regras de lint para React
       reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
+      // Habilita regras de lint para React DOM
       reactDom.configs.recommended,
     ],
     languageOptions: {
@@ -62,7 +110,7 @@ export default tseslint.config([
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
+      // outras opções...
     },
   },
 ])
